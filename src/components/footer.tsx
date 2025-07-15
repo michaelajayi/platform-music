@@ -31,42 +31,50 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="bg-black min-h-[400px] py-10 flex flex-col space-y-10 relative">
-      <div className="flex flex-col space-y-8 justify-center items-center w-full h-auto pb-[150px] z-10">
-        <Image src={logo} alt="Platform Music Logo" width={100} height={100} className="pointer-events-none select-none mx-auto"/>
+    <footer className="bg-black flex justify-center items-center w-full relative overflow-y-hidden">
+      <div className="w-full justify-center items-center flex flex-col">
+        <div className="flex flex-col space-y-8 justify-center items-center w-full h-auto py-5 md:py-10 md:mb-[150px]">
+          <Image
+            src={logo}
+            alt="Platform Music Logo"
+            width={100}
+            height={100}
+            className="pointer-events-none select-none mx-auto"
+          />
         {/* email */}
-        <div className="flex space-x-1 items-center">
-          <Image src={email} alt="email" />
-          <a
-            href="mailto:theplatformmusicltd@gmail.com"
-            className="text-dark-gray text-[20px] leading-[12px] text-center"
-          >
-            theplatformmusicltd@gmail.com
-          </a>
-        </div>
-
-        {/* social links */}
-        <div className="flex space-x-10 items-center">
-          {socialLinks.map((social, index) => (
+          <div className="flex space-x-1 items-center">
+            <Image src={email} alt="email" />
             <a
-              key={index}
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex justify-center items-center bg-tomato-red rounded-full aspect-square p-5"
+              href="mailto:theplatformmusicltd@gmail.com"
+              className="text-dark-gray text-[16px] md:text-[20px] text-center"
             >
-              <Image src={social.icon} alt={social.item} />
+              theplatformmusicltd@gmail.com
             </a>
-          ))}
+          </div>
+
+          {/* social links */}
+          <div className="flex space-x-5 md:space-x-10 items-center">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center items-center bg-tomato-red rounded-full aspect-square p-1 md:p-5"
+              >
+                <Image src={social.icon} alt={social.item} className="scale-[.65] md:scale-[1]" />
+              </a>
+            ))}
+          </div>
+          <p className="text-dark-gray text-[16px] md:text-[20px] text-center">
+            &copy; {new Date().getFullYear()} ThePlatformmusic Ltd.
+          </p>
         </div>
-        <p className="text-dark-gray text-[20px] leading-[12.23px] text-center">
-          &copy; {new Date().getFullYear()} ThePlatformmusic Ltd.
-        </p>
-      </div>
-      <div className="grid place-items-center absolute bottom-3 left-0 right-0">
-        <h3 className="text-white/10 uppercase text-[205.35px] leading-[90.59px] font-impact pointer-events-none select-none md:text-[clamp(80px,15vw,205px)] z-0">
-          Platform Music
-        </h3>
+        <div className="absolute -bottom-12 w-full flex justify-center items-center">
+          <h3 className="text-white/10 uppercase text-[205.35px] leading-[205.35px] font-impact pointer-events-none select-none hidden md:block">
+            Platform Music
+          </h3>
+        </div>
       </div>
     </footer>
   );

@@ -1,11 +1,11 @@
 @import "tailwindcss";
-@import './fonts.css';
+@import "./fonts.css";
 
 :root {
     /* Base colours */
     --background: #fff;
     --foreground: #000;
-    
+
     /* Font families */
     --font-sans: "HelveticaNowDisplay", sans-serif;
 }
@@ -14,12 +14,24 @@
     /* colours */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --color-tomato-red: #E60D0D;
+    --color-tomato-red: #e60d0d;
     --color-dark-gray: #999999;
-    
+
     /* fonts */
     --font-family-sans: var(--font-sans);
-    --font-impact: 'Impact', sans-serif;
+    --font-impact: "Impact", sans-serif;
+    --font-polysans: "Polysans", sans-serif;
+    --animate-slow-spin: slowspin 15s linear infinite;
+    
+    /* animations and keyframes */
+      @keyframes slowspin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 }
 
 @utility container {

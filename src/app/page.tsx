@@ -1,9 +1,11 @@
-// import PlatformRecords from "@/components/platform-records";
+import MediaGallery from "@/components/media-gallery";
+import PlatformRecords from "@/components/platform-records";
 
 export default function Home() {
   return (
-    <main className="">
-      {/* <PlatformRecords /> */}
+    <main className="w-screen h-full overflow-y-hidden overflow-x-hidden">
+      <PlatformRecords />
+      <MediaGallery />
     </main>
   );
 }
