@@ -28,9 +28,20 @@ const Artist = () => {
 
   return (
     <section className="bg-black p-5 flex flex-col space-y-5 z-10 items-start">
-      <Image src={artist?.coverPhoto || ""} alt={artist?.name} className="h-50 w-50 rounded-full aspect-square mt-[8rem]" />
+      {artist?.coverPhoto && (
+        <Image
+          src={artist.coverPhoto}
+          alt={artist?.name}
+          className="h-50 w-50 rounded-full aspect-square mt-[8rem]"
+        />
+      )}
       <p className="text-white text-5xl">Hi, {artist?.name}</p>
-      <Link href="/about" className="bg-tomato-red px-5 py-2 flex justify-center items-center text-white text-[20px]">Go back</Link>
+      <Link
+        href="/about"
+        className="bg-tomato-red px-5 py-2 flex justify-center items-center text-white text-[20px]"
+      >
+        Go back
+      </Link>
     </section>
   );
 };
