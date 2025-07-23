@@ -6,10 +6,18 @@ const VideoPlayer = ({ videoSrc }: { videoSrc: string }) => {
       slot="media"
       src={videoSrc}
       controls={false}
-      style={{
+      playing={false}
+      playsInline={true}
+      style={{  
         width: "100%",
         height: "100%",
       }}
+      config={{
+        youtube: {
+          color: "white",
+        },
+      }}
+      className="relative z-10"
     />
   );
 };

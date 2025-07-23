@@ -73,15 +73,15 @@ const PlatformRecords = () => {
   ];
 
   return (
-    <div className="w-screen h-auto flex justify-center items-center p-5 md:p-20 bg-black bg-opacity-[10%] relative">
+    <div className="w-screen h-auto flex justify-center items-center p-5 lg:p-20 bg-black relative py-20">
       {/* absolutely positioned elements */}
       <Image
         src={maze}
         alt="Maze"
-        className="absolute inset-0 w-full object-cover z-5"
+        className="absolute inset-0 w-full object-cover z-0"
       />
       {/* scroller */}
-      <div className="absolute top-5 md:top-10 right-5 md:right-10 grid place-content-center z-5">
+      <div className="absolute top-5 lg:top-20 right-5 lg:right-10 grid place-content-center z-0">
         <Image
           src={scroller}
           alt="Scroller"
@@ -93,17 +93,19 @@ const PlatformRecords = () => {
           className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 right-1/2 top-1/2 pointer-events-none select-none"
         />
       </div>
-      <div className="grid grid-cols-12 gap-5 md:gap-20 z-10">
-        {/* left side */}
-        <div className="col-span-12 md:col-span-4 w-full flex flex-col justify-between">
-          <p className="text-[48px] md:text-[96px] leading-[50px] md:leading-[125px] text-white">
+
+      <div className="w-full space-y-5 lg:space-y-20 z-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-20">
+          <p className="text-[48px] lg:text-[96px] leading-[50px] lg:leading-[125px] text-white col-span-4 w-full">
             Let&apos;s Explore
           </p>
-
+          <p className="text-[48px] lg:text-[96px] leading-[48px] lg:leading-[125px] text-white col-span-8 w-full self-end">
+            Our Catalog
+          </p>
+        </div>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-10 gap-x-20">
           {/* media controls */}
-          <div
-            className="hidden md:flex space-x-4 justify-center items-center rounded-[8px] px-5 py-3 border-[2.59px] border-white/7  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)]"
-          >
+          <div className="flex space-x-4 justify-center items-center rounded-[8px] px-5 py-3 border-[2.59px] border-white/7  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)] col-span-4 lg:self-end row-start-2 col-start-2 lg:col-start-1 lg:row-start-1 relative">
             {mediaControls.map((control, index) => (
               <Image
                 src={control.icon}
@@ -113,20 +115,7 @@ const PlatformRecords = () => {
               />
             ))}
           </div>
-
-          {/* <p className="text-white">Hi there...</p> */}
-        </div>
-        {/* right side */}
-        <div className="col-span-12 md:col-span-8 w-full flex flex-col space-y-5 md:space-y-20 overflow-auto">
-          <p className="text-[48px] md:text-[96px] leading-[48px] md:leading-[125px] text-white">
-            Platform{" "}
-            <span className="hidden md:inline">
-              <br />
-            </span>{" "}
-            Records
-          </p>
-          {/* table */}
-          <table className="table-auto md:table-fixed text-white text-left border-collapse">
+          <table className="table-auto lg:table-fixed text-white text-left border-collapse mt-10 lg:mt-0 col-span-8">
             <thead className="">
               <tr className="">
                 <th className="border-b-[.5px] border-[#555] pb-2"></th>
@@ -137,12 +126,12 @@ const PlatformRecords = () => {
                 <th className="border-b-[.5px] border-[#555] pb-2 font-medium text-[16px]">
                   Artist
                 </th>
-                <th className="hidden md:block border-b-[.5px] border-[#555] pb-2 font-medium text-[16px]">
+                <th className="border-b-[.5px] border-[#555] pb-2 font-medium text-[16px]">
                   Genre
                 </th>
               </tr>
             </thead>
-            <tbody className="text-white md:text-dark-gray text-[12px] md:text-[20px]">
+            <tbody className="text-white lg:text-dark-gray text-[12px] lg:text-[20px]">
               {platformRecords.map((record, index) => (
                 <tr className="" key={index}>
                   <td className="border-b-[.5px] border-dark-gray">
@@ -151,10 +140,13 @@ const PlatformRecords = () => {
                       alt="play icon"
                       className="cursor-pointer"
                     />
-                    {/* </div> */}
                   </td>
                   <td className="border-b-[.5px] border-dark-gray py-3">
-                    <Image src={record.albumArt} alt="table image" className="" />
+                    <Image
+                      src={record.albumArt}
+                      alt="table image"
+                      className="scale-[.65] lg:scale-100"
+                    />
                   </td>
                   <td className="border-b-[.5px]  border-dark-gray">
                     {record.track}
@@ -162,7 +154,7 @@ const PlatformRecords = () => {
                   <td className="border-b-[.5px]  border-dark-gray">
                     {record.artist}
                   </td>
-                  <td className="hidden md:block border-b-[.5px]  border-dark-gray">
+                  <td className="border-b-[.5px]  border-dark-gray">
                     {record.genre}
                   </td>
                 </tr>

@@ -11,6 +11,7 @@ import deezer from "../../public/icons/deezer.svg";
 import amazonMusic from "../../public/icons/amazon-music.svg";
 import VideoGrid from "./video-grid";
 import MarqueeComponent from "./marquee-component";
+import arrowRightWhite from "../../public/icons/arrow-right-white.svg";
 
 const MediaGallery = () => {
   const streamingPlatforms = [
@@ -86,28 +87,35 @@ const MediaGallery = () => {
             </div>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full flex flex-col space-y-10 justify-center items-center">
           <VideoGrid />
+          <button className="flex space-x-2 items-center px-5 py-2 bg-[#058AE3] rounded-[8px] cursor-pointer">
+            <p className="text-white text-[20px]">See More</p>
+            <Image src={arrowRightWhite} alt="arrow right white" />
+          </button>
         </div>
-        <div className="w-full grid grid-cols-12 gap-5 md:gap-10 mt-5 md:mt-20">
-          <p className="font-medium text-[16px] md:text-[20px] leading-[30px] uppercase text-dark-gray col-span-12 md:col-span-4">
-            The Platform Music: Where Every Note Tells a Story, and Every Beat
-            Inspires a Movement!
-          </p>
-          <div className="col-span-2"></div>
-          <div className="col-span-12 md:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-x-5 md:gap-x-10 gap-y-5">
-            {streamingPlatforms.map((platform, index) => (
-              <a
-                href={platform.link}
-                className="flex space-x-3 items-center"
-                key={index}
-              >
-                <Image src={platform.icon} alt={platform.title} />
-                <p className="font-medium text-white text-[14px] md:text-[20px] leading-normal md:leading-[30px] uppercase">
-                  {platform.title}
-                </p>
-              </a>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-col-12 gap-8 lg:gap-12 py-10 lg:py-20">
+          <div className="lg:col-span-2">
+            <p className="font-medium text-[16px] md:text-[20px] leading-[30px] uppercase text-dark-gray col-span-12 md:col-span-4">
+              The Platform Music: Where Every Note Tells a Story, and Every Beat
+              Inspires a Movement!
+            </p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div className="col-span-12 md:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-x-5 md:gap-x-10 gap-y-5">
+              {streamingPlatforms.map((platform, index) => (
+                <a
+                  href={platform.link}
+                  className="flex space-x-3 items-center"
+                  key={index}
+                >
+                  <Image src={platform.icon} alt={platform.title} />
+                      <p className="font-medium text-white text-[14px] md:text-[20px] leading-normal md:leading-[30px] uppercase">
+                    {platform.title}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <div className="w-full mt-5 md:mt-10">

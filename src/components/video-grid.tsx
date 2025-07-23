@@ -60,7 +60,7 @@ const VideoGrid = () => {
     },
   ];
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-10 gap-x-5 mt-5 md:mt-10">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-5  mt-5 md:mt-10">
       {videos.map((video: IVideoComponent, index: number) => (
         <VideoComponent video={video} key={index} />
       ))}
