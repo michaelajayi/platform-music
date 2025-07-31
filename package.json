@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "i": "^0.3.7",
     "next": "15.3.3",
+    "npm": "^11.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
-    "react-player": "^3.2.0"
+    "react-player": "^3.2.0",
+    "react-responsive": "^10.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

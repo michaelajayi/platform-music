@@ -1,10 +1,13 @@
 "use client";
 
 import headerLogo from "../../public/header-logo.svg";
-import hamburger from '../../public/icons/hamburger.svg';
+import hamburger from "../../public/icons/hamburger.svg";
+import hamburgerClose from "../../public/icons/hamburger-close.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import MobileMenu from "./mobile-menu";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -27,10 +30,15 @@ const Nav = () => {
       href: "/contact",
     },
   ];
+
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
   return (
-    <nav className="w-full z-20 py-5 flex-shrink-0 absolute inset-0 self-start">
-      <div className="flex justify-between items-center px-5 lg:px-20">
-        <Image src={headerLogo} alt="header logo" priority />
+    <nav className="w-full z-20 flex-shrink-0 absolute inset-0 self-start">
+      <div className="flex justify-between items-center px-5 lg:px-20 py-5">
+        <Link href="/">
+          <Image src={headerLogo} alt="header logo" priority />
+        </Link>
         <div className="hidden md:flex space-x-5">
           {navLinks.map((link, index) => (
             <Link
@@ -42,8 +50,27 @@ const Nav = () => {
             </Link>
           ))}
         </div>
-        <Image src={hamburger} alt="hamburger" priority className="cursor-pointer lg:hidden" />
-        {/* mobile menu goes here... */}
+        {isMobile ? (
+          <Image
+            src={hamburgerClose}
+            alt="hamburger close"
+            priority
+            className="cursor-pointer lg:hidden"
+            onClick={() => setIsMobile(!isMobile)}
+          />
+        ) : (
+          <Image
+            src={hamburger}
+            alt="hamburger"
+            priority
+            className="cursor-pointer lg:hidden"
+            onClick={() => setIsMobile(!isMobile)}
+          />
+        )}
+      </div>
+      {/* mobile menu goes here... */}
+      <div>
+        <MobileMenu />
       </div>
     </nav>
   );

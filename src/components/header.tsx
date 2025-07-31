@@ -25,7 +25,7 @@ const Header = () => {
           />
         </div>
         {/* overlay */}
-        <div className="absolute inset-0 bg-black/30 z-0"></div>
+        <div className="absolute inset-0 bg-black/30 z-0 backdrop-blur-[1px]"></div>
       </div>
 
       {/* hero content goes here... */}

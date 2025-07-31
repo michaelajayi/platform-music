@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen w-screen overflow-x-hidden relative">
+      <body className="flex flex-col min-h-screen w-screen overflow-x-hidden relative  selection:text-[#e60d0d]">
         <Nav />
         <div className="flex flex-col">{children}</div>
         <Footer />

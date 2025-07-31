@@ -34,14 +34,14 @@ const AboutUs = () => {
           </h3>
           <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10">
             {artists.map((artist, index) => (
-              <div key={index} className="relative overflow-hidden">
+              <div key={index} className="relative overflow-hidden group">
                 <Link href={`/about/artists/${artist.slug}`}>
                   <Image
                     src={artist.coverPhoto}
                     alt={artist.name}
-                    className="w-full h-full object-cover scale-105 hover:scale-125 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-all duration-[1500ms] ease-out grayscale group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none">
+                  <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none transition-all duration-[1500ms] ease-out group-hover:bg-black/10">
                     <p className="text-white font-medium text-[18px] lg:text-[24px] leading-[125%] absolute bottom-10 left-5">
                       {artist.name}
                     </p>
