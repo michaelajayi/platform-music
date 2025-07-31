@@ -3,6 +3,7 @@ import maze from "../../../public/images/contact-us-maze.svg";
 import { artists } from "../data/artists";
 
 import Link from "next/link";
+import { missionStatement } from "../utils/constants";
 
 const AboutUs = () => {
 
@@ -16,16 +17,8 @@ const AboutUs = () => {
           <h3 className="text-white uppercase font-polysans font-light text-[36px] lg:text-[64px]">
             Our Mission
           </h3>
-          <p className="text-[#999] text-[16px] lg:text-[20px] font-medium uppercase leading-[150%] max-w-5xl">
-            Our mission is to glorify God by producing and promoting
-            spirit-filled gospel music that uplifts hearts, transforms lives and
-            spreads the message of Christ to the world. We are committed to
-            cultivating and nurturing a creative and Christ-centered environment
-            where Music Ministers, Creators and Team Members are empowered,
-            valued, respected and equitably supported. Through excellence,
-            professionalism, integrity and a deep sense of purpose, we strive to
-            honour every God-given gift and foster a community built on faith,
-            trust, fairness and fellowship.
+          <p className="text-[#999] text-[14px] lg:text-[20px] font-medium uppercase lg:leading-[150%] max-w-5xl leading-loose">
+           {missionStatement}
           </p>
         </div>
         <div className="w-full flex flex-col space-y-5">

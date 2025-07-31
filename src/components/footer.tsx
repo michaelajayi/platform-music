@@ -1,35 +1,10 @@
 import Image from "next/image";
-import logo from "../../public/images/logo.svg";
 import email from "../../public/icons/email.svg";
+import logo from "../../public/images/logo.svg";
 
-import facebook from "../../public/images/facebook.svg";
-import instagram from "../../public/images/instagram.svg";
-import tiktok from "../../public/images/tiktok.svg";
-import youtube from "../../public/images/youtube.svg";
+import SocialLinks from "./social-links";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      item: "facebook",
-      icon: facebook,
-      link: "https://www.facebook.com/ThePlatformMusic",
-    },
-    {
-      item: "instagram",
-      icon: instagram,
-      link: "https://www.instagram.com/ThePlatformMusic",
-    },
-    {
-      item: "tiktok",
-      icon: tiktok,
-      link: "https://www.tiktok.com/@ThePlatformMusic",
-    },
-    {
-      item: "youtube",
-      icon: youtube,
-      link: "https://www.youtube.com/@ThePlatformMusic",
-    },
-  ];
   return (
     <footer className="bg-black flex justify-center items-center w-full relative overflow-y-hidden">
       <div className="w-full justify-center items-center flex flex-col">
@@ -41,7 +16,7 @@ const Footer = () => {
             height={100}
             className="pointer-events-none select-none mx-auto"
           />
-        {/* email */}
+          {/* email */}
           <div className="flex space-x-1 items-center">
             <Image src={email} alt="email" />
             <a
@@ -53,19 +28,7 @@ const Footer = () => {
           </div>
 
           {/* social links */}
-          <div className="flex space-x-5 md:space-x-10 items-center">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-center items-center bg-tomato-red rounded-full aspect-square p-1 md:p-5"
-              >
-                <Image src={social.icon} alt={social.item} className="scale-[.65] md:scale-[1]" />
-              </a>
-            ))}
-          </div>
+          <SocialLinks />
           <p className="text-dark-gray text-[16px] md:text-[20px] text-center">
             &copy; {new Date().getFullYear()} ThePlatformmusic Ltd.
           </p>

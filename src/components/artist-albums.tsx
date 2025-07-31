@@ -1,6 +1,13 @@
 import { IArtistAlbum } from "@/interfaces/artist.interface";
 import Divider from "./divider";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import ArtistAlbum from "./artist-album";
+import { swiperBreakpoints } from "@/app/utils/constants";
 
 interface IArtistAlbumProps {
   albums: IArtistAlbum[];
@@ -8,34 +15,25 @@ interface IArtistAlbumProps {
 
 const ArtistAlbums = ({ albums }: IArtistAlbumProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full z-20">
       <Divider />
-      <div className="w-full px-20 py-10 flex flex-col space-y-5">
+      <div className="w-full px-5 lg:px-20 py-10 flex flex-col space-y-5">
         <h3 className="font-polysans font-light text-white uppercase text-[40px]">
           Music
         </h3>
-        <div className="w-full flex justify-between space-x-5 items-center">
-          {albums &&
-            albums.map((album, index) => (
-              <div
-                key={index}
-                className="w-full h-full flex flex-col space-y-5"
-              >
-                <Image
-                  src={album.albumArt}
-                  alt={album.title}
-                  className="w-full h-full object-cover select-none pointer-events-none"
-                />
-                <div className="flex flex-col space-y-1">
-                  <p className="font-polysans font-light text-white text-[20px] leading-[30px]">
-                    {album.artists}
-                  </p>
-                  <p className="font-polysans font-light text-[#999] text-[14px]">
-                    {album.title}
-                  </p>
-                </div>
-              </div>
+        <div className="relative w-full z-20">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={1.2} // mobile shows 1 full + 20% of next
+            grabCursor={true}
+            breakpoints={swiperBreakpoints}
+          >
+            {albums && albums.map((album, index) => (
+              <SwiperSlide key={index}>
+                <ArtistAlbum album={album} />
+              </SwiperSlide>
             ))}
+          </Swiper>
         </div>
       </div>
     </div>

@@ -1,37 +1,35 @@
 "use client";
 
-import headerLogo from "../../public/header-logo.svg";
-import hamburger from "../../public/icons/hamburger.svg";
-import hamburgerClose from "../../public/icons/hamburger-close.svg";
+import { navLinks } from "@/app/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import headerLogo from "../../public/header-logo.svg";
+import HamburgerToggle from "./hamburger-toggle";
 import MobileMenu from "./mobile-menu";
 
 const Nav = () => {
   const pathname = usePathname();
 
-  const navLinks = [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "About Us",
-      href: "/about",
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-    },
-    {
-      title: "Contact",
-      href: "/contact",
-    },
-  ];
-
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
+  
+  useEffect(() => {
+    // only run on client side
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    }
+    
+    // check initial value
+    checkMobile();
+    
+    // Add event listener
+    window.addEventListener('resize', checkMobile);
+    
+    // clean up side effects
+    return () => window.removeEventListener('resize', checkMobile);
+}, []);
 
   return (
     <nav className="w-full z-20 flex-shrink-0 absolute inset-0 self-start">
@@ -50,28 +48,24 @@ const Nav = () => {
             </Link>
           ))}
         </div>
-        {isMobile ? (
-          <Image
-            src={hamburgerClose}
-            alt="hamburger close"
-            priority
-            className="cursor-pointer lg:hidden"
-            onClick={() => setIsMobile(!isMobile)}
-          />
-        ) : (
-          <Image
-            src={hamburger}
-            alt="hamburger"
-            priority
-            className="cursor-pointer lg:hidden"
-            onClick={() => setIsMobile(!isMobile)}
-          />
-        )}
+
+        {/* hamburger toggle */}
+        <HamburgerToggle
+          isMobile={isMobile}
+          isMobileOpen={isMobileOpen}
+          toggleHamburgerMenu={() => setIsMobileOpen(!isMobileOpen)}
+        />
       </div>
       {/* mobile menu goes here... */}
-      <div>
-        <MobileMenu />
-      </div>
+      {isMobileOpen && (
+        <div className="absolute inset-0">
+          <MobileMenu
+            navLinks={navLinks}
+            isOpen={isMobileOpen}
+            closeMenu={() => setIsMobileOpen(false)}
+          />
+        </div>
+      )}
     </nav>
   );
 };

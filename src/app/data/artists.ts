@@ -67,6 +67,31 @@ export const artists = [
         artists: "Jamal ft Gasbee",
         title: "Only you",
         albumArt: onlyYou
+      },
+      {
+        artists: "Jamal",
+        title: 'Nature',
+        albumArt: nature,
+      },
+      {
+        artists: "Jamal",
+        title: "Coming Home",
+        albumArt: comingHome,
+      },
+      {
+        artists: "Jamal ft One Pilot",
+        title: "My blood his blood",
+        albumArt: myBloodHisBlood,
+      },
+      {
+        artists: "Jamal",
+        title: "Island",
+        albumArt: island
+      },
+      {
+        artists: "Jamal ft Gasbee",
+        title: "Only you",
+        albumArt: onlyYou
       }
     ],
     slug: "jamal-alamina",

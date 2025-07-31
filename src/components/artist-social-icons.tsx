@@ -24,7 +24,7 @@ const ArtistSocialIcons = ({ socials }: IArtistSocialIconsProps) => {
   };
   
   return (
-    <div className="w-full flex space-x-5">
+    <div className="w-full flex space-x-3 lg:space-x-5">
       {
         socials.map((social: ISocial, index: number) => {
           const iconSrc = socialIcons[social.name.toLowerCase()];
