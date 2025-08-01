@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
+import SmoothScrollProvider from "./providers/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: "The Platform Music",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen w-screen overflow-x-hidden relative  selection:text-[#e60d0d]">
-        <Nav />
-        <div className="flex flex-col">{children}</div>
-        <Footer />
+        <SmoothScrollProvider>
+          <Nav />
+          <div className="flex flex-col">{children}</div>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

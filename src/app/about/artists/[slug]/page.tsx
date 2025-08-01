@@ -59,7 +59,7 @@ const Artist = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-full  bg-black pt-0 lg:pt-10">
+        <div className="relative w-full  bg-black pt-0 lg:pt-10 h-full-20">
           <div className="absolute inset-0 z-0">
             <Image src={maze} alt="Contact Us Maze" fill objectFit="cover" />
           </div>
@@ -85,7 +85,7 @@ const Artist = () => {
             </div>
           </div>
           {/* Albums */}
-          <div className="relative z-20">
+          <div className="relative z-10">
             <ArtistAlbums albums={artist.albums} />
           </div>
           <div className="pt-10 lg:pt-[10rem]">

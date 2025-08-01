@@ -116,7 +116,7 @@ const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
             </div>
             {/* mobile nav footer */}
             <motion.div
-              className="flex flex-col space-y-5 justify-center items-center"
+              className="flex flex-col space-y-5 justify-center items-center mb-20 lg:mb-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}

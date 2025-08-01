@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { IVideoComponent } from "@/interfaces/video.interface";
 import gospelVideo from "../../public/images/video-banners/gosapl-video.svg";
@@ -51,7 +51,7 @@ const VideoGrid = () => {
     {
       banner: spiritEmbrace,
       title: "Spirit's Embrace - A Voyage of Enlightenment",
-      url: "https://www.youtube.com/watch?v=f2gJHnNLGok",
+      url: "https://www.youtube.com/watch?v=7SYQZGw-6AM&pp=0gcJCccJAYcqIYzv",
     },
     {
       banner: etherealChords,

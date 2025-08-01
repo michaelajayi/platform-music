@@ -17,7 +17,7 @@ const ContactUs = () => {
     },
   ];
   return (
-    <section className="relative w-full min-h-screen h-screen  bg-black py-10">
+    <section className="relative w-full min-h-screen h-full  bg-black py-10">
       <div className="absolute inset-0 z-0">
         <Image
           src={contactUsMaze}
@@ -26,18 +26,18 @@ const ContactUs = () => {
           objectFit="cover"
         />
       </div>
-      <div className="relative z-10 flex flex-col space-y-8 lg:space-y-20 px-5 lg:px-20  h-full flex-grow py-[6rem] justify-center items-center mt-[8rem] lg:mt-0">
+      <div className="relative z-10 flex flex-col space-y-8 lg:space-y-20 px-5 lg:px-20 h-full flex-grow py-[7rem] lg:py-0 justify-center items-center lg:mt-0">
         <div className="flex flex-col space-y-2 justify-center items-center">
-          <h3 className="text-white uppercase font-polysans font-light text-[36px] text-center">
+          <h3 className="text-white uppercase font-polysans font-light text-[24px] lg:text-[36px] text-center">
             Contact Us
           </h3>
-          <p className="text-white/50 text-[20px] font-medium">
+          <p className="text-white/50 text-[16px] lg:text-[20px] font-medium">
             Our team will be in touch with you soon
           </p>
         </div>
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 mx-auto lg:mx-0 gap-10 lg:gap-0 mt-10">
           <div className="flex flex-col space-y-5">
-            <p className="text-white text-[24px] lg:max-w-[22ch] mx-auto md:mx-0">
+            <p className="text-white text-[18px] lg:text-[24px] lg:max-w-[22ch] mx-auto md:mx-0">
               7B, Alhaja Kudirat Adenekan Street, Ajao Estate, Isolo, Lagos.
             </p>
             <div className="flex flex-col space-y-3">
@@ -46,7 +46,7 @@ const ContactUs = () => {
                   <div className="p-1 bg-[#E60D0D]/20 rounded-full aspect-square">
                     <Image src={contact.icon} alt={contact.label} />
                   </div>
-                  <p className="text-[#999] text-[16px] font-medium">
+                  <p className="text-[#999] text-[14px] lg:text-[16px] font-medium">
                     {contact.value}
                   </p>
                 </div>
@@ -54,10 +54,10 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-8 bg-white rounded-[10px] px-5 lg:px-8 py-10">
-            <p className="text-[#0035B3] text-[24px] font-bold">
+            <p className="text-[#0035B3] text-[18px] lg:text-[24px] font-bold">
               Send us a message
             </p>
-            <form className="flex flex-col space-y-5">
+            <form className="flex flex-col space-y-5 z-10">
               <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
                 <input
                   type="text"

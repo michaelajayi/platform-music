@@ -15,7 +15,7 @@ interface IArtistAlbumProps {
 
 const ArtistAlbums = ({ albums }: IArtistAlbumProps) => {
   return (
-    <div className="w-full z-20">
+    <div className="w-full h-full z-20">
       <Divider />
       <div className="w-full px-5 lg:px-20 py-10 flex flex-col space-y-5">
         <h3 className="font-polysans font-light text-white uppercase text-[40px]">
