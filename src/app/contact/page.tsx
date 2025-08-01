@@ -17,7 +17,7 @@ const ContactUs = () => {
     },
   ];
   return (
-    <section className="relative w-full min-h-screen h-full  bg-black py-10">
+    <section className="relative w-full  h-full  bg-black py-20 lg:py-[10rem]">
       <div className="absolute inset-0 z-0">
         <Image
           src={contactUsMaze}
@@ -26,7 +26,7 @@ const ContactUs = () => {
           objectFit="cover"
         />
       </div>
-      <div className="relative z-10 flex flex-col space-y-8 lg:space-y-20 px-5 lg:px-20 h-full flex-grow py-[7rem] lg:py-0 justify-center items-center lg:mt-0">
+      <div className="relative z-10 flex flex-col space-y-8 lg:space-y-20 px-5 lg:px-20 h-full flex-grow py-[5rem] lg:py-0 justify-center items-center lg:mt-0">
         <div className="flex flex-col space-y-2 justify-center items-center">
           <h3 className="text-white uppercase font-polysans font-light text-[24px] lg:text-[36px] text-center">
             Contact Us

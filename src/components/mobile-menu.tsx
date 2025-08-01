@@ -21,7 +21,6 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
-
   // lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -57,15 +56,13 @@ const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
     };
   }, [isOpen, closeMenu]);
 
-  // mobile menu animation
-
   if (!isOpen) return null;
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 w-screen h-screen bg-black flex justify-center items-center z-10"
+          className="fixed inset-0 w-full h-screen bg-black flex justify-center items-center z-10"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -116,7 +113,7 @@ const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
             </div>
             {/* mobile nav footer */}
             <motion.div
-              className="flex flex-col space-y-5 justify-center items-center mb-20 lg:mb-0"
+              className="flex flex-col space-y-5 justify-center items-center mb-5 lg:mb-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}

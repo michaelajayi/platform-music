@@ -6,7 +6,7 @@ import SocialLinks from "./social-links";
 
 const Footer = () => {
   return (
-    <footer className="bg-black flex justify-center items-center w-full relative overflow-y-hidden">
+    <footer className="bg-black flex justify-center items-center w-full relative overflow-y-hidden z-40 min-h-[400px]">
       <div className="w-full justify-center items-center flex flex-col">
         <div className="flex flex-col space-y-8 justify-center items-center w-full h-auto py-5 md:py-10 md:mb-[150px]">
           <Image

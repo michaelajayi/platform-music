@@ -17,10 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen w-screen overflow-x-hidden relative  selection:text-[#e60d0d]">
+      <body className="flex flex-col min-h-screen w-full overflow-x-hidden relative">
         <SmoothScrollProvider>
-          <Nav />
-          <div className="flex flex-col">{children}</div>
+          {/* Navbar */}
+          <div className="relative z-20">
+            <Nav />
+          </div>
+
+          {/* Main content area */}
+          <div className="flex-1 relative z-10">{children}</div>
           <Footer />
         </SmoothScrollProvider>
       </body>

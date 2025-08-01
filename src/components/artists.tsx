@@ -1,34 +1,76 @@
+"use client";
+
 import { artists } from "@/app/data/artists";
 import Image from "next/image";
 import Link from "next/link";
 import Scroller from "./scroller";
+import { useState } from "react";
 
 const Artists = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleTap = (index: number) => {
+    // Toggle scroller visibility on mobile
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10">
-      {artists.map((artist, index) => (
-        <div key={index} className="relative overflow-hidden group">
-          <div>
-            {artist?.coverPhoto && (
-              <Image
-                src={artist.coverPhoto}
-                alt={artist.name}
-                className="w-full h-full object-cover transition-all duration-[1500ms] ease-out grayscale group-hover:grayscale-0"
-              />
-            )}
-            <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none transition-all duration-[1500ms] ease-out group-hover:bg-black/20">
-              <p className="text-white font-medium text-[18px] lg:text-[24px] leading-[125%] absolute bottom-5 lg:bottom-10 left-5">
-                {artist.name}
-              </p>
+      {artists.map((artist, index) => {
+        const isActive = activeIndex === index;
+
+        return (
+          <div
+            key={index}
+            className="relative overflow-hidden group aspect-[4/5]"
+          >
+            {/* Clickable Image Area */}
+            <Link 
+              href={`/about/artists/${artist.slug}`}
+              className="block h-full w-full relative"
+              onClick={(e) => {
+                // If scroller is visible, allow normal navigation
+                if (!isActive) {
+                  e.preventDefault();
+                  handleTap(index);
+                }
+              }}
+            >
+              {artist?.coverPhoto && (
+                <Image
+                  src={artist.coverPhoto}
+                  alt={artist.name}
+                  fill
+                  className={`object-cover transition-all duration-800 ${
+                    isActive ? "grayscale-0" : "grayscale"
+                  } ease-out md:group-hover:grayscale-0`}
+                  priority={index < 3}
+                />
+              )}
+              <div className={`absolute inset-0 transition-all ${
+                isActive ? "bg-black/30" : "bg-black/20"
+              } duration-800 ease-out md:group-hover:bg-black/20`}>
+                <p className="text-white font-medium text-[18px] lg:text-[24px] leading-[125%] absolute bottom-5 lg:bottom-10 left-5">
+                  {artist.name}
+                </p>
+              </div>
+            </Link>
+
+            {/* Scroller - Now properly clickable */}
+            <div className={`absolute inset-0 flex justify-center items-center transition-all duration-800 ease-out ${
+              isActive ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+            } md:translate-y-full md:group-hover:translate-y-0 md:group-hover:opacity-100 scale-[.85] lg:scale-[1]`}>
+              <Link
+                href={`/about/artists/${artist.slug}`}
+                className="h-full w-full flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Scroller />
+              </Link>
             </div>
           </div>
-          <div className="absolute inset-0 flex justify-center items-center transition-all translate-y-full group-hover:translate-y-0 duration-[1000ms] ease-out">
-            <Link href={`/about/artists/${artist.slug}`}>
-              <Scroller />
-            </Link>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

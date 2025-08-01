@@ -73,7 +73,7 @@ const PlatformRecords = () => {
   ];
 
   return (
-    <div className="w-screen h-auto flex justify-center items-center p-5 lg:p-20 bg-black relative py-20">
+    <div className="w-screen h-auto flex justify-center items-center p-5 lg:p-20 bg-black relative py-20 z-30">
       {/* absolutely positioned elements */}
       <Image
         src={maze}
@@ -96,10 +96,10 @@ const PlatformRecords = () => {
 
       <div className="w-full space-y-5 lg:space-y-20 z-10">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-20">
-          <p className="text-[48px] lg:text-[96px] leading-[50px] lg:leading-[125px] text-white col-span-4 w-full">
+          <p className="text-[36px] lg:text-[96px] leading-[50px] lg:leading-[125px] text-white col-span-4 w-full">
             Let&apos;s Explore
           </p>
-          <p className="text-[48px] lg:text-[96px] leading-[48px] lg:leading-[125px] text-white col-span-8 w-full self-end">
+          <p className="text-[36px] lg:text-[96px] leading-[48px] lg:leading-[125px] text-white col-span-8 w-full self-end">
             Our Catalog
           </p>
         </div>

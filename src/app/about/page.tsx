@@ -15,7 +15,7 @@ const AboutUs = () => {
           <h3 className="text-white uppercase font-polysans font-light text-[36px] lg:text-[64px]">
             Our Mission
           </h3>
-          <p className="text-[#999] text-[14px] lg:text-[20px] font-medium uppercase lg:leading-[150%] max-w-5xl leading-loose">
+          <p className="text-[#999] text-[14px] lg:text-[20px] font-medium uppercase lg:leading-[150%] max-w-5xl leading-relaxed">
             {missionStatement}
           </p>
         </div>

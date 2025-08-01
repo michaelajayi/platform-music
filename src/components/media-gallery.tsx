@@ -57,7 +57,7 @@ const MediaGallery = () => {
     },
   ];
   return (
-    <div className="w-screen h-auto flex justify-center items-center bg-black bg-opacity-[10%] relative px-5 md:px-20 pt-10 pb-5">
+    <div className="w-full h-auto flex justify-center items-center bg-black bg-opacity-[10%] relative px-5 md:px-20 pt-10 pb-5 z-30">
       {/* absolutely position element */}
       <Image
         src={maze}
@@ -68,7 +68,7 @@ const MediaGallery = () => {
       <div className="w-full flex flex-col space-y-10 z-10">
         <div className="w-full flex flex-col space-y-20">
           <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center space-y-5 md:space-y-0">
-            <h4 className="text-white text-[48px] md:text-[96px] leading-[53px] md:leading-[125px]">
+            <h4 className="text-white text-[34px] md:text-[96px] leading-[53px] md:leading-[125px]">
               The Platform Music TV
             </h4>
             {/* youtube icon */}

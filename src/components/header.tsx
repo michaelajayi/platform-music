@@ -5,9 +5,9 @@ import BackgroundVideoPlayer from "./background-video-player";
 
 const Header = () => {
   return (
-    <header className="relative w-full h-screen overflow-hidden flex flex-col">
+    <header className="fixed top-0 left-0 w-full h-screen overflow-hidden flex flex-col z-10">
       {/* absolute positioned elements */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-10">
         <BackgroundVideoPlayer videoSrc="/videos/header.mp4" />
 
         {/* scroller */}
