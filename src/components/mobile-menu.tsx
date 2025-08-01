@@ -88,14 +88,14 @@ const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
           </motion.div>
           {/* menu content */}
           <motion.div
-            className="w-full h-full flex flex-col py-20 justify-between"
+            className="w-full h-full flex flex-col py-10 lg:py-20 justify-between"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
             {/* mobile nav links */}
-            <div className="flex flex-col justify-center items-center space-y-12 pt-20">
+            <div className="flex flex-col justify-center items-center space-y-10 lg:space-y-12 pt-20">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={index}
@@ -106,7 +106,7 @@ const MobileMenu = ({ navLinks, isOpen, closeMenu }: MobileMenuProps) => {
                 >
                   <Link
                     href={link.href}
-                    className="text-white text-[48px] leading-[50px] text-center"
+                    className="text-white text-[38px] lg:text-[48px] leading-[30px] lg:leading-[50px] text-center"
                     onClick={closeMenu}
                   >
                     {link.title}

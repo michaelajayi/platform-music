@@ -21,7 +21,7 @@ const AboutUs = () => {
            {missionStatement}
           </p>
         </div>
-        <div className="w-full flex flex-col space-y-5">
+        <div className="w-full flex flex-col space-y-5 z-20">
           <h3 className="text-white uppercase font-polysans font-light text-[36px] lg:text-[64px]">
             Our Artists
           </h3>
@@ -32,15 +32,15 @@ const AboutUs = () => {
                   <Image
                     src={artist.coverPhoto}
                     alt={artist.name}
-                    className="w-full h-full object-cover transition-all duration-[1500ms] ease-out grayscale group-hover:grayscale-0"
+                    className="w-full h-full object-cover transition-all duration-[1500ms] ease-out grayscale group-hover:grayscale-0 focus:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none transition-all duration-[1500ms] ease-out group-hover:bg-black/10">
-                    <p className="text-white font-medium text-[18px] lg:text-[24px] leading-[125%] absolute bottom-10 left-5">
+                  <div className="inset-0 bg-black/20 pointer-events-none transition-all duration-[1500ms] ease-out group-hover:bg-black/10">
+                    <p className="text-white font-medium text-[18px] lg:text-[24px] leading-[125%] absolute bottom-5 lg:bottom-10 left-5">
                       {artist.name}
                     </p>
                   </div>
                 </Link>
-                <div className="w-full h-[5px] bg-red-600" />
+                {/* <div className="w-full h-[5px] bg-red-600" /> */}
               </div>
             ))}
           </div>
