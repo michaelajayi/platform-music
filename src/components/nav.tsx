@@ -32,7 +32,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="relative w-full z-0 flex-shrink-0 inset-0 self-start bg-black/50">
+    <nav className="relative w-full z-0 flex-shrink-0 inset-0 self-start">
       <div className="flex justify-between items-center px-5 lg:px-20 py-5 bg-black/10 backdrop-blur-[15px]">
         <Link href="/">
           <Image src={headerLogo} alt="header logo" priority />
