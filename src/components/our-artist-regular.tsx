@@ -29,7 +29,7 @@ const OurArtistRegular = () => {
       </div>
 
       {/* Bottom grid  */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-5 z-10 h-auto items-end">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-20 z-10 h-auto items-end">
         {/* left artist */}
         <div
           className="relative flex flex-col space-y-3 group h-full"

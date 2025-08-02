@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import headerLogo from "../../public/header-logo.svg";
+import headerLogo from "../../public/logo-white.svg";
 import HamburgerToggle from "./hamburger-toggle";
 import MobileMenu from "./mobile-menu";
 
@@ -35,7 +35,7 @@ const Nav = () => {
     <nav className="fixed top-0 leeft-0 w-full z-20 flex-shrink-0 inset-0 self-start bg-transparent backdrop-blur-[10px]">
       <div className="flex justify-between items-center px-5 lg:px-20 py-5">
         <Link href="/">
-          <Image src={headerLogo} alt="header logo" priority />
+          <Image src={headerLogo} alt="header logo" priority className="w-full h-full scale-125"/>
         </Link>
         <div className="hidden md:flex space-x-12">
           {navLinks.map((link, index) => (

@@ -1,84 +1,61 @@
 import { INavLink } from "@/interfaces/ui.interface";
+import { Variants } from "framer-motion";
 import facebook from "../../../public/images/facebook.svg";
 import instagram from "../../../public/images/instagram.svg";
 import tiktok from "../../../public/images/tiktok.svg";
 import youtube from "../../../public/images/youtube.svg";
-import { Variants } from "framer-motion";
 
-import echoesOfTomorrow from "../../../public/images/echoes-of-tomorrow.svg";
-import rhythmOfTheNight from "../../../public/images/rhythm-of-the-night.svg";
 import chasingStars from "../../../public/images/chasing-stars.svg";
-import vibesOfTheCity from "../../../public/images/vibes-of-the-city.svg";
+import echoesOfTomorrow from "../../../public/images/echoes-of-tomorrow.svg";
 import melodyInMotion from "../../../public/images/melody-in-motion.svg";
-import shuffle from "../../../public/icons/shuffle.svg";
-import prev from "../../../public/icons/previous.svg";
-import next from "../../../public/icons/next.svg";
-import playCircle from "../../../public/icons/play-circle.svg";
-import repeatOnce from "../../../public/icons/repeat-once.svg";
+import rhythmOfTheNight from "../../../public/images/rhythm-of-the-night.svg";
+import vibesOfTheCity from "../../../public/images/vibes-of-the-city.svg";
 
+import { ITrack } from "@/interfaces/media.interface";
 import img_post_01 from "../../../public/images/blog/posts/001.jpg";
 import img_post_02 from "../../../public/images/blog/posts/002.jpg";
 import img_post_03 from "../../../public/images/blog/posts/003.jpg";
-import { ITrack } from "@/interfaces/media.interface";
 
-export const platformRecords: ITrack[] = [
+export const audioTracks: ITrack[] = [
   {
+    id: 1,
     track: "Echoes of Tomorrow",
     artist: "Ngoebi Binebai",
     genre: "Rap Beats",
     albumArt: echoesOfTomorrow,
-    audioSrc: "/audio/audio.mp3",
+    audioSrc: "/audio/echoes-of-tomorrow.mp3",
   },
   {
+    id: 2,
     track: "Rhythm of the Night",
     artist: "Adeola Iwalewa",
     genre: "Urban Rhythms",
     albumArt: rhythmOfTheNight,
-    audioSrc: "/audio/audio.mp3",
+    audioSrc: "/audio/rhythm-of-the-night.mp3",
   },
   {
+    id: 3,
     track: "Chasing Stars",
     artist: "Ugochukwu Anyaoku",
     genre: "Street Vibes",
     albumArt: chasingStars,
-    audioSrc: "/audio/audio.mp3",
+    audioSrc: "/audio/chasing-stars.mp3",
   },
   {
+    id: 4,
     track: "Vibes of the City",
     artist: "Nengi Amachree",
     genre: "Flow and Groove",
     albumArt: vibesOfTheCity,
-    audioSrc: "/audio/audio.mp3",
+    audioSrc: "/audio/vibes-of-the-city.mp3",
   },
   {
+    id: 5,
     track: "Melody in Motion",
     artist: "Rashida Danjuma",
     genre: "Rhythmic Poetry",
     albumArt: melodyInMotion,
-    audioSrc: "/audio/audio.mp3",
-  },
-];
-
-export const mediaControls = [
-  {
-    action: "shuffle",
-    icon: shuffle,
-  },
-  {
-    action: "prev",
-    icon: prev,
-  },
-  {
-    action: "playcircle",
-    icon: playCircle,
-  },
-  {
-    action: "next",
-    icon: next,
-  },
-  {
-    action: "repeatonce",
-    icon: repeatOnce,
+    audioSrc: "/audio/melody-in-motion.mp3",
   },
 ];
 
@@ -140,7 +117,7 @@ export const menuVariants: Variants = {
     transition: {
       type: "spring",
       damping: 25,
-      stiffness: 200,
+      stiffness: 200, 
     },
   },
   exit: {

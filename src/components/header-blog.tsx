@@ -24,10 +24,10 @@ const HeaderBlog = () => {
             Inspires a Movement!
           </p>
         </div>
-        <Image src={headerSmall} alt="header small img" priority />
+        <Image src={headerSmall} alt="header small img" priority className="transition-all duration-800 ease-out grayscale hover:grayscale-0" />
       </div>
       {/* right side */}
-      <div className="hidden lg:flex w-full h-full justify-center items-center p-10">
+      <div className="hidden lg:flex w-full h-full justify-center items-center p-10 transition-all duration-800 ease-out grayscale hover:grayscale-0">
         <Image
           src={headerRightImg}
           alt="header right img"
