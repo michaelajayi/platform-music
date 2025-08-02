@@ -15,7 +15,7 @@ const MediaControls = ({
   toggleRepeat,
 }: IMediaControl) => {
   return (
-    <div className="flex space-x-8 justify-center items-center rounded-[8px] px-5 py-5 border-[2.59px] border-white/20  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)] col-span-5 lg:col-span-3 lg:self-end row-start-2 lg:col-start-1 lg:row-start-1 relative mx-auto lg:mx-0">
+    <div className="flex space-x-8 justify-center items-center rounded-[8px] px-8 py-5 border-[2.59px] border-white/20  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)] col-span-5 lg:col-span-3 lg:self-end row-start-2 lg:col-start-1 lg:row-start-1 relative mx-auto lg:mx-0">
       {/* shuffle */}
       <RxShuffle
         className={`cursor-pointer hover:text-[#555] ${isShuffle ? "text-white" : "text-[#999]"}`}

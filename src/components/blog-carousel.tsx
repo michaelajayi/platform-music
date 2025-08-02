@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BlogSlider from "./blog-slider";
 
 const BlogCarousel = () => {
@@ -15,9 +16,9 @@ const BlogCarousel = () => {
               </p>
             </div>
             <div className="w-full flex">
-              <p className="cursor-pointer font-medium text-white text-[16px] text-start pb-1 flex justify-start border-b-[.5px] border-[#999]">
+              <Link href="/blog" className="cursor-pointer font-medium text-white text-[16px] text-start pb-1 flex justify-start border-b-[.5px] border-[#999]">
                 View all posts...
-              </p>
+              </Link>
             </div>
           </div>
         </div>

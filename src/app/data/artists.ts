@@ -205,7 +205,7 @@ export const artists = [
       { name: "instagram", url: "https://www.instagram.com/jamalalamina/" },
       { name: "tiktok", url: "https://www.tiktok.com/@jamalalamina" },
       {
-        name: "youtuve",
+        name: "youtube",
         url: "https://www.youtube.com/channel/UCwzZ6zZ6zZ6zZ6zZ6zZ6zZ6",
       },
       {
