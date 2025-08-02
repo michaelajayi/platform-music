@@ -3,27 +3,9 @@
 import Image from "next/image";
 import ourArtistsMaze from "../../public/images/our-artists-maze.svg";
 import OurArtistRegular from "./our-artist-regular";
-import { useEffect, useState } from "react";
 import OurArtistsSlider from "./our-artists-slider";
 
 const OurArtists = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    // only run on client side
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // check initial value
-    checkMobile();
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile);
-
-    // clean up side effects
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   return (
     <div className="min-h-screen w-full bg-[#0035B3] relative z-30">
