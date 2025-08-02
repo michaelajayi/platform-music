@@ -53,6 +53,7 @@ const OurArtistsSlider = () => {
             spaceBetween={0}
             slidesPerView={1.2}
             freeMode={true}
+            grabCursor={true}
             modules={[FreeMode]}
             className="h-full"
           >

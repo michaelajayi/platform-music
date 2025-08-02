@@ -25,8 +25,8 @@ const Artists = () => {
             className="relative overflow-hidden group aspect-[4/5]"
           >
             {/* Clickable Image Area */}
-            <Link 
-              href={`/about/artists/${artist.slug}`}
+            <div 
+              // href={`/about/artists/${artist.slug}`}
               className="block h-full w-full relative"
               onClick={(e) => {
                 // If scroller is visible, allow normal navigation
@@ -54,19 +54,19 @@ const Artists = () => {
                   {artist.name}
                 </p>
               </div>
-            </Link>
+            </div>
 
-            {/* Scroller - Now properly clickable */}
+            {/* Scroller */}
             <div className={`absolute inset-0 flex justify-center items-center transition-all duration-800 ease-out ${
               isActive ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
             } md:translate-y-full md:group-hover:translate-y-0 md:group-hover:opacity-100 scale-[.85] lg:scale-[1]`}>
-              <Link
-                href={`/about/artists/${artist.slug}`}
+              <div
+                // href={`/about/artists/${artist.slug}`}
                 className="h-full w-full flex items-center justify-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Scroller />
-              </Link>
+                <Scroller url={`about/artists/${artist.slug}`} />
+              </div>
             </div>
           </div>
         );

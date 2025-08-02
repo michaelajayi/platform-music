@@ -5,6 +5,83 @@ import tiktok from "../../../public/images/tiktok.svg";
 import youtube from "../../../public/images/youtube.svg";
 import { Variants } from "framer-motion";
 
+import echoesOfTomorrow from "../../../public/images/echoes-of-tomorrow.svg";
+import rhythmOfTheNight from "../../../public/images/rhythm-of-the-night.svg";
+import chasingStars from "../../../public/images/chasing-stars.svg";
+import vibesOfTheCity from "../../../public/images/vibes-of-the-city.svg";
+import melodyInMotion from "../../../public/images/melody-in-motion.svg";
+import shuffle from "../../../public/icons/shuffle.svg";
+import prev from "../../../public/icons/previous.svg";
+import next from "../../../public/icons/next.svg";
+import playCircle from "../../../public/icons/play-circle.svg";
+import repeatOnce from "../../../public/icons/repeat-once.svg";
+
+import img_post_01 from "../../../public/images/blog/posts/001.jpg";
+import img_post_02 from "../../../public/images/blog/posts/002.jpg";
+import img_post_03 from "../../../public/images/blog/posts/003.jpg";
+import { ITrack } from "@/interfaces/media.interface";
+
+export const platformRecords: ITrack[] = [
+  {
+    track: "Echoes of Tomorrow",
+    artist: "Ngoebi Binebai",
+    genre: "Rap Beats",
+    albumArt: echoesOfTomorrow,
+    audioSrc: "/audio/audio.mp3",
+  },
+  {
+    track: "Rhythm of the Night",
+    artist: "Adeola Iwalewa",
+    genre: "Urban Rhythms",
+    albumArt: rhythmOfTheNight,
+    audioSrc: "/audio/audio.mp3",
+  },
+  {
+    track: "Chasing Stars",
+    artist: "Ugochukwu Anyaoku",
+    genre: "Street Vibes",
+    albumArt: chasingStars,
+    audioSrc: "/audio/audio.mp3",
+  },
+  {
+    track: "Vibes of the City",
+    artist: "Nengi Amachree",
+    genre: "Flow and Groove",
+    albumArt: vibesOfTheCity,
+    audioSrc: "/audio/audio.mp3",
+  },
+  {
+    track: "Melody in Motion",
+    artist: "Rashida Danjuma",
+    genre: "Rhythmic Poetry",
+    albumArt: melodyInMotion,
+    audioSrc: "/audio/audio.mp3",
+  },
+];
+
+export const mediaControls = [
+  {
+    action: "shuffle",
+    icon: shuffle,
+  },
+  {
+    action: "prev",
+    icon: prev,
+  },
+  {
+    action: "playcircle",
+    icon: playCircle,
+  },
+  {
+    action: "next",
+    icon: next,
+  },
+  {
+    action: "repeatonce",
+    icon: repeatOnce,
+  },
+];
+
 export const socialLinks = [
   {
     item: "facebook",
@@ -107,3 +184,60 @@ export const swiperBreakpoints = {
     spaceBetween: 40,
   },
 };
+
+export const blogSwiperBreakpoints = {
+  640: {
+    slidesPerView: 1,
+    spaceBetween: 20,
+  },
+  768: {
+    slidesPerView: 2,
+    spaceBetween: 25,
+  },
+  1024: {
+    slidesPerView: 3.2,
+    spaceBetween: 30,
+  },
+  1280: {
+    slidesPerView: 3.2,
+    spaceBetween: 40,
+  },
+};
+
+export const posts = [
+  {
+    id: 1,
+    title: "Exploring the Wonders of the Digital Frontier",
+    image: img_post_01,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    id: 2,
+    title: "Exploring the Wonders of the Digital Frontier",
+    image: img_post_02,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    id: 3,
+    title: "Exploring the Wonders of the Digital Frontier",
+    image: img_post_03,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    id: 1,
+    title: "Exploring the Wonders of the Digital Frontier",
+    image: img_post_01,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    id: 2,
+    title: "Exploring the Wonders of the Digital Frontier",
+    image: img_post_02,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+];

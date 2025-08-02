@@ -17,7 +17,7 @@ const ContactUs = () => {
     },
   ];
   return (
-    <section className="relative w-full  h-full  bg-black py-20 lg:py-[10rem]">
+    <section className="relative w-full min-h-[90vh]  bg-black py-20 flex justify-center items-center border-b-[.5px] border-[#999]">
       <div className="absolute inset-0 z-0">
         <Image
           src={contactUsMaze}

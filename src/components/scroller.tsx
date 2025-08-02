@@ -1,10 +1,14 @@
 import Image from "next/image";
 import learnMoreCurvedText from "../../public/images/learn-more-curved-text.svg";
 import arrowDownWhite from "../../public/icons/arrow-down-white-scroller.svg";
+import Link from "next/link";
 
-const Scroller = () => {
+const Scroller = ({ url }: { url: string }) => {
   return (
-    <div className="grid place-content-center bg-tomato-red rounded-full">
+    <Link
+      href={url}
+      className="grid place-content-center bg-tomato-red rounded-full"
+    >
       <Image
         src={learnMoreCurvedText}
         alt="header scroller"
@@ -16,7 +20,7 @@ const Scroller = () => {
         alt="Arrow Down Red"
         className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 right-1/2 top-1/2 pointer-events-none select-none z-5"
       />
-    </div>
+    </Link>
   );
 };
 

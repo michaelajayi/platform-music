@@ -32,16 +32,16 @@ const Nav = () => {
 }, []);
 
   return (
-    <nav className="fixed top-0 leeft-0 w-full z-20 flex-shrink-0 inset-0 self-start bg-transparent">
+    <nav className="fixed top-0 leeft-0 w-full z-20 flex-shrink-0 inset-0 self-start bg-transparent backdrop-blur-[10px]">
       <div className="flex justify-between items-center px-5 lg:px-20 py-5">
         <Link href="/">
           <Image src={headerLogo} alt="header logo" priority />
         </Link>
-        <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex space-x-12">
           {navLinks.map((link, index) => (
             <Link
               href={link.href}
-              className={`text-white text-[16px] leading-[24px] px-2 ${link.href === pathname ? "border-b-[2px] border-white" : null}`}
+              className={`text-white text-[16px] leading-[24px] px-2 ${link.href === pathname ? "border-b-[2px] border-white hover:border-[#999]" : null} transition-all duration-300  hover:text-[#999]`}
               key={index}
             >
               <span>{link.title}</span>

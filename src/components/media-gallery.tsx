@@ -1,17 +1,17 @@
 import Image from "next/image";
-import maze from "../../public/images/maze.svg";
-import youtubePlayIcon from "../../public/icons/youtube-play-icon-white.svg";
-import youtubeMusic from "../../public/icons/youtube-music.svg";
+import amazonMusic from "../../public/icons/amazon-music.svg";
+import appleMusic from "../../public/icons/apple-music.svg";
+import arrowRightWhite from "../../public/icons/arrow-right-white.svg";
+import deezer from "../../public/icons/deezer.svg";
+import pandora from "../../public/icons/pandora.svg";
 import soundcloud from "../../public/icons/soundcloud.svg";
 import spotify from "../../public/icons/spotify.svg";
-import appleMusic from "../../public/icons/apple-music.svg";
 import tidal from "../../public/icons/tidal.svg";
-import pandora from "../../public/icons/pandora.svg";
-import deezer from "../../public/icons/deezer.svg";
-import amazonMusic from "../../public/icons/amazon-music.svg";
-import VideoGrid from "./video-grid";
+import youtubeMusic from "../../public/icons/youtube-music.svg";
+import youtubePlayIcon from "../../public/icons/youtube-play-icon-white.svg";
+import maze from "../../public/images/maze.svg";
 import MarqueeComponent from "./marquee-component";
-import arrowRightWhite from "../../public/icons/arrow-right-white.svg";
+import VideoGrid from "./video-grid";
 
 const MediaGallery = () => {
   const streamingPlatforms = [

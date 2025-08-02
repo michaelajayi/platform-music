@@ -19,8 +19,8 @@ const OurArtistRegular = () => {
 
       {/* Centered text block - takes remaining space and centers content */}
       <div className="lg:flex-1 w-full flex justify-center items-center px-5 lg:px-20">
-        <div className="w-full max-w-4xl flex justify-center items-center py-10 px-10 lg:p-20 bg-[#0035B3]">
-          <div className="flex justify-center items-center w-full lg:max-w-3xl">
+        <div className="w-full max-w-5xl flex justify-center items-center py-10 px-10 lg:p-20 bg-[#0035B3]">
+          <div className="flex justify-center items-center w-full lg:max-w-3xl lg:py-10">
             <p className="font-medium text-white text-[16px] lg:text-[20px] uppercase text-start lg:text-center z-30 leading-relaxed">
               {`"${aboutArtistText}"`}
             </p>

@@ -1,79 +1,35 @@
+'use client';
+
 import arrowDownRed from "../../public/icons/arrow-down-red.svg";
-import scroller from "../../public/images/scroller.svg";
 import maze from "../../public/images/maze.svg";
-import echoesOfTomorrow from "../../public/images/echoes-of-tomorrow.svg";
-import rhythmOfTheNight from "../../public/images/rhythm-of-the-night.svg";
-import chasingStars from "../../public/images/chasing-stars.svg";
-import vibesOfTheCity from "../../public/images/vibes-of-the-city.svg";
-import melodyInMotion from "../../public/images/melody-in-motion.svg";
 import play from "../../public/icons/play.svg";
 import Image from "next/image";
+import { mediaControls, platformRecords } from "@/app/utils/constants";
+import { ITrack } from "@/interfaces/media.interface";
+import scroller from '../../public/images/scroller.svg';
 
-import shuffle from "../../public/icons/shuffle.svg";
-import prev from "../../public/icons/previous.svg";
-import next from "../../public/icons/next.svg";
-import playCircle from "../../public/icons/play-circle.svg";
-import repeatOnce from "../../public/icons/repeat-once.svg";
+import { useState, useRef } from "react";
+
+// interface IPlatformRecordsProps {
+//   record: ITrack;
+// }
 
 const PlatformRecords = () => {
-  const platformRecords = [
-    {
-      track: "Echoes of Tomorrow",
-      artist: "Ngoebi Binebai",
-      genre: "Rap Beats",
-      albumArt: echoesOfTomorrow,
-    },
-    {
-      track: "Rhythm of the Night",
-      artist: "Adeola Iwalewa",
-      genre: "Urban Rhythms",
-      albumArt: rhythmOfTheNight,
-    },
-    {
-      track: "Chasing Stars",
-      artist: "Ugochukwu Anyaoku",
-      genre: "Street Vibes",
-      albumArt: chasingStars,
-    },
-    {
-      track: "Vibes of the City",
-      artist: "Nengi Amachree",
-      genre: "Flow and Groove",
-      albumArt: vibesOfTheCity,
-    },
-    {
-      track: "Melody in Motion",
-      artist: "Rashida Danjuma",
-      genre: "Rhythmic Poetry",
-      albumArt: melodyInMotion,
-    },
-  ];
-
-  const mediaControls = [
-    {
-      action: "shuffle",
-      icon: shuffle,
-    },
-    {
-      action: "prev",
-      icon: prev,
-    },
-    {
-      action: "playcircle",
-      icon: playCircle,
-    },
-    {
-      action: "next",
-      icon: next,
-    },
-    {
-      action: "repeatonce",
-      icon: repeatOnce,
-    },
-  ];
-
+  const [currentTrack, setCurrentTrack] = useState<ITrack | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  
+  const playTrack = (record: ITrack) => {
+    
+  }
   return (
     <div className="w-screen h-auto flex justify-center items-center p-5 lg:p-20 bg-black relative py-20 z-30">
+      {/* Hidden audio element */}
+      <audio ref={audioRef} src={currentTrack?.audioSrc} />
+      
       {/* absolutely positioned elements */}
       <Image
         src={maze}
@@ -134,7 +90,7 @@ const PlatformRecords = () => {
             <tbody className="text-white lg:text-dark-gray text-[12px] lg:text-[20px]">
               {platformRecords.map((record, index) => (
                 <tr className="" key={index}>
-                  <td className="border-b-[.5px] border-dark-gray">
+                  <td className="border-b-[.5px] border-dark-gray" onClick={() => playTrack(record)}>
                     <Image
                       src={play}
                       alt="play icon"
