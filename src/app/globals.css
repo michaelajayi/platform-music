@@ -21,6 +21,7 @@
     --font-family-sans: var(--font-sans);
     --font-impact: "Impact", sans-serif;
     --font-polysans: "Polysans", sans-serif;
+    --font-trash-medium: 'Trash Medium', san-serif;
     --animate-slow-spin: slowspin 15s linear infinite;
     
     /* animations and keyframes */

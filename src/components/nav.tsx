@@ -14,26 +14,26 @@ const Nav = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
-  
+
   useEffect(() => {
     // only run on client side
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
-    }
-    
+    };
+
     // check initial value
     checkMobile();
-    
+
     // Add event listener
-    window.addEventListener('resize', checkMobile);
-    
+    window.addEventListener("resize", checkMobile);
+
     // clean up side effects
-    return () => window.removeEventListener('resize', checkMobile);
-}, []);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
-    <nav className="relative w-full z-0 flex-shrink-0 inset-0 self-start">
-      <div className="flex justify-between items-center px-5 lg:px-20 py-5">
+    <nav className="relative w-full z-0 flex-shrink-0 inset-0 self-start bg-black/50">
+      <div className="flex justify-between items-center px-5 lg:px-20 py-5 bg-black/10 backdrop-blur-[15px]">
         <Link href="/">
           <Image src={headerLogo} alt="header logo" priority />
         </Link>

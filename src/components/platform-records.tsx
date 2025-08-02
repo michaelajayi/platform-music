@@ -95,7 +95,7 @@ const PlatformRecords = () => {
       </div>
 
       <div className="w-full space-y-5 lg:space-y-20 z-10">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-20">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-10">
           <p className="text-[36px] lg:text-[96px] leading-[50px] lg:leading-[125px] text-white col-span-4 w-full">
             Let&apos;s Explore
           </p>
@@ -103,9 +103,9 @@ const PlatformRecords = () => {
             Our Catalog
           </p>
         </div>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-10 gap-x-20">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-10">
           {/* media controls */}
-          <div className="flex space-x-4 justify-center items-center rounded-[8px] px-5 py-3 border-[2.59px] border-white/7  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)] col-span-4 lg:self-end row-start-2 col-start-2 lg:col-start-1 lg:row-start-1 relative">
+          <div className="flex space-x-4 justify-center items-center rounded-[8px] px-5 py-3 border-[2.59px] border-white/20  backdrop-blur-[25.87px] bg-gradient-to-b from-black/20 from-0% via-black/14 via-69% to-black/20 to-100% [box-shadow:inset_0_77.6px_155.2px_0_rgba(255,255,255,0.15)] col-span-5 lg:col-span-3 lg:self-end row-start-2 lg:col-start-1 lg:row-start-1 relative mx-auto lg:mx-0">
             {mediaControls.map((control, index) => (
               <Image
                 src={control.icon}
@@ -115,7 +115,7 @@ const PlatformRecords = () => {
               />
             ))}
           </div>
-          <table className="table-auto lg:table-fixed text-white text-left border-collapse mt-10 lg:mt-0 col-span-8">
+          <table className="table-auto lg:table-fixed text-white text-left border-collapse mt-10 lg:mt-0 col-span-8 lg:col-start-5">
             <thead className="">
               <tr className="">
                 <th className="border-b-[.5px] border-[#555] pb-2"></th>

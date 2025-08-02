@@ -57,12 +57,12 @@ const MediaGallery = () => {
     },
   ];
   return (
-    <div className="w-full h-auto flex justify-center items-center bg-black bg-opacity-[10%] relative px-5 md:px-20 pt-10 pb-5 z-30">
+    <div className="w-screen h-auto flex justify-center items-center bg-black bg-opacity-[10%] relative px-5 md:px-20 pt-10 lg:pt-20 pb-5 z-30">
       {/* absolutely position element */}
       <Image
         src={maze}
         alt="Maze"
-        className="absolute inset-0 w-full object-cover z-5"
+        className="absolute inset-0 w-full h-full object-cover z-5 pointer-events-none"
       />
 
       <div className="w-full flex flex-col space-y-10 z-10">
@@ -94,15 +94,15 @@ const MediaGallery = () => {
             <Image src={arrowRightWhite} alt="arrow right white" />
           </button>
         </div>
-        <div className="grid grid-cols-1 lg:grid-col-12 gap-8 lg:gap-12 py-10 lg:py-20">
-          <div className="lg:col-span-2">
-            <p className="font-medium text-[16px] md:text-[20px] leading-[30px] uppercase text-dark-gray col-span-12 md:col-span-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 py-10 lg:py-20">
+          <div className="lg:col-span-4">
+            <p className="font-medium text-[16px] md:text-[20px] leading-[30px] uppercase text-dark-gray col-span-12 md:col-span-4 lg: pr-10">
               The Platform Music: Where Every Note Tells a Story, and Every Beat
               Inspires a Movement!
             </p>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <div className="col-span-12 md:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-x-5 md:gap-x-10 gap-y-5">
+          <div className="lg:col-span-5 lg:col-start-7">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5">
               {streamingPlatforms.map((platform, index) => (
                 <a
                   href={platform.link}
