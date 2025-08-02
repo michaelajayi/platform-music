@@ -1,6 +1,6 @@
 "use client";
 
-import { IVideoComponent } from "@/interfaces/video.interface";
+import { IVideoComponent } from "@/interfaces/media.interface";
 import gospelVideo from "../../public/images/video-banners/gosapl-video.svg";
 import jireh from "../../public/images/video-banners/jireh.svg";
 import worshipWithMe from "../../public/images/video-banners/worship-with-me.svg";

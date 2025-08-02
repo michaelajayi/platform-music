@@ -1,35 +1,33 @@
-'use client';
+"use client";
 
 import arrowDownRed from "../../public/icons/arrow-down-red.svg";
 import maze from "../../public/images/maze.svg";
 import play from "../../public/icons/play.svg";
 import Image from "next/image";
 import { mediaControls, platformRecords } from "@/app/utils/constants";
-import { ITrack } from "@/interfaces/media.interface";
-import scroller from '../../public/images/scroller.svg';
+// import { ITrack } from "@/interfaces/media.interface";
+import scroller from "../../public/images/scroller.svg";
 
-import { useState, useRef } from "react";
+// import { useRef } from "react";
 
 // interface IPlatformRecordsProps {
 //   record: ITrack;
 // }
 
 const PlatformRecords = () => {
-  const [currentTrack, setCurrentTrack] = useState<ITrack | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [progress, setProgress] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const audioRef = useRef<HTMLAudioElement>(null);
-  
-  const playTrack = (record: ITrack) => {
-    
-  }
+  // const [currentTrack, setCurrentTrack] = useState<ITrack | null>(null);
+  // const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  // const [progress, setProgress] = useState(0);
+  // const [currentTime, setCurrentTime] = useState(0);
+  // const [duration, setDuration] = useState(0);
+  // const audioRef = useRef<HTMLAudioElement>(null);
+
+  // const playTrack = () => {};
   return (
     <div className="w-screen h-auto flex justify-center items-center p-5 lg:p-20 bg-black relative py-20 z-30">
       {/* Hidden audio element */}
-      <audio ref={audioRef} src={currentTrack?.audioSrc} />
-      
+      {/*<audio ref={audioRef} src={currentTrack?.audioSrc} />*/}
+
       {/* absolutely positioned elements */}
       <Image
         src={maze}
@@ -90,7 +88,10 @@ const PlatformRecords = () => {
             <tbody className="text-white lg:text-dark-gray text-[12px] lg:text-[20px]">
               {platformRecords.map((record, index) => (
                 <tr className="" key={index}>
-                  <td className="border-b-[.5px] border-dark-gray" onClick={() => playTrack(record)}>
+                  <td
+                    className="border-b-[.5px] border-dark-gray"
+                    // onClick={() => playTrack(record)}
+                  >
                     <Image
                       src={play}
                       alt="play icon"

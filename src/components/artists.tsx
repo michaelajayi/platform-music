@@ -2,7 +2,6 @@
 
 import { artists } from "@/app/data/artists";
 import Image from "next/image";
-import Link from "next/link";
 import Scroller from "./scroller";
 import { useState } from "react";
 

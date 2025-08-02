@@ -1,4 +1,4 @@
-import { IVideoComponent } from "@/interfaces/video.interface";
+import { IVideoComponent } from "@/interfaces/media.interface";
 import VideoPlayer from "./video-player";
 
 const VideoComponent = ({ video }: { video: IVideoComponent }) => {
