@@ -28,11 +28,11 @@ const OurArtistRegular = () => {
         </div>
       </div>
 
-      {/* Bottom grid - uncomment when ready to use */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-5 z-10 h-aut">
+      {/* Bottom grid  */}
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-5 z-10 h-auto items-end">
         {/* left artist */}
         <div
-          className="relative flex flex-col space-y-3 group"
+          className="relative flex flex-col space-y-3 group h-full"
           onMouseEnter={() =>
             setAboutArtistText(
               "Music is the essence of our existence, a melody that resonates within every heart. At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together!",
@@ -44,13 +44,13 @@ const OurArtistRegular = () => {
             alt="dozy jan"
             className="absolute bottom-45 transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
           />
-          <div className="flex flex-row items-end space-x-5 h-full">
-            <p className="font-polysans text-white font-medium lg:text-[212.557px] leading-[0.8] text-[69.854px]">
+          <div className="flex items-end space-x-3 h-full mt-auto">
+            <p className="font-trash-medium text-white font-medium lg:text-[212.557px] leading-[.5] text-[69.854px] self-end">
               01
             </p>
             <div className="flex flex-col space-y-1 pb-2">
               <p className="font-medium text-white text-[48px]">Dozy Jan</p>
-              <p className="text-[#C7C7CC] text-[15px] lg:text-[24px]">
+              <p className="text-[#C7C7CC] text-[15px] lg:text-[24px] leading-[.1]">
                 Chisom Kanu
               </p>
             </div>
@@ -58,7 +58,7 @@ const OurArtistRegular = () => {
         </div>
 
         {/* right artist */}
-        <div className="relative flex flex-col space-y-3 group" onMouseEnter={() =>
+        <div className="relative flex flex-col space-y-3 group h-full" onMouseEnter={() =>
           setAboutArtistText(
             "At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together! Music is the essence of our existence, a melody that resonates within every heart.",
           )
@@ -68,15 +68,15 @@ const OurArtistRegular = () => {
             alt="cossy brown"
             className="absolute bottom-45 right-20 transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
           />
-          <div className="flex justify-end items-end space-x-5 h-full">
-            <p className="font-polysans text-white font-medium lg:text-[212.557px] leading-[0.8] text-[69.854px]">
+          <div className="flex justify-end items-end space-x-3 h-full mt-auto">
+            <p className="font-trash-medium text-white font-medium lg:text-[212.557px] leading-[.5] text-[69.854px]">
               02
             </p>
             <div className="flex flex-col space-y-1 pb-2">
               <p className="font-medium text-white text-[48px]">
                 Cossy Brown
               </p>
-              <p className="text-[#C7C7CC] text-[15px] lg:text-[24px]">
+              <p className="text-[#C7C7CC] text-[15px] lg:text-[24px] leading-[.1]">
                 Funke Olabode
               </p>
             </div>

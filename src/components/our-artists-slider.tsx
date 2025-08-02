@@ -44,7 +44,7 @@ const OurArtistsSlider = () => {
   ];
   return (
     <div className="w-full h-full">
-      <div className="w-full py-10 lg:px-20 flex flex-col space-y-10">
+      <div className="w-full py-10 lg:px-20 flex flex-col space-y-12">
         <h3 className="font-polysans font-light text-white text-[48px] uppercase px-5">
           Our Artists
         </h3>

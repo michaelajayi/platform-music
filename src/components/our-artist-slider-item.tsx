@@ -26,9 +26,9 @@ const OurArtistSliderItem = ({ artist, index }: OurArtistSliderItemProps) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex flex-col space-y-3 flex-shrink-0">
+      <div className="flex flex-col space-y-3 flex-shrink-0 py-5">
         <div className="flex space-x-1 items-end">
-          <p className="font-polysans text-white font-medium lg:text-[212.557px] leading-[0.8] text-[69.854px]">
+          <p className="font-trash-medium text-white font-medium lg:text-[212.557px] leading-[0.5] text-[69.854px]">
             0{index + 1}
           </p>
           <div className="flex flex-col space-y-1">
