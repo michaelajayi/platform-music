@@ -1,14 +1,15 @@
 import cossyBrown from "../../public/images/artists/artist-slider/cossy-brown.svg";
 import dozyJan from "../../public/images/artists/artist-slider/dozy-jan.svg";
-import naomiBozimo from '../../public/images/artists/artist-slider/naomi-bozimo.svg';
-import billPraise from '../../public/images/artists/artist-slider/bill-praise.svg';
+import naomiBozimo from "../../public/images/artists/artist-slider/naomi-bozimo.svg";
+import billPraise from "../../public/images/artists/artist-slider/bill-praise.svg";
 import OurArtistSliderItem from "./our-artist-slider-item";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// import required modules
+import { FreeMode } from 'swiper/modules';
+
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import 'swiper/css/free-mode';
 
 const OurArtistsSlider = () => {
   const artists = [
@@ -48,7 +49,13 @@ const OurArtistsSlider = () => {
           Our Artists
         </h3>
         <div className="w-full flex-1">
-          <Swiper spaceBetween={0} slidesPerView={1.2} className="h-full">
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={1.2}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="h-full"
+          >
             {artists.map((artist, index) => (
               <SwiperSlide
                 key={index}
