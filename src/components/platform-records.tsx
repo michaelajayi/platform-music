@@ -15,7 +15,6 @@ const PlatformRecords = () => {
   const [currentTrack, setCurrentTrack] = useState<ITrack | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isShuffle, setIsShuffle] = useState<boolean>(false);
-  const [isRepeat, setIsRepeat] = useState<boolean>(false);
   const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]);
   const [repeatMode, setRepeatMode] = useState<'off' | 'all' | 'one'>('off');
 

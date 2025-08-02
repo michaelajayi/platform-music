@@ -1,4 +1,4 @@
-import { PiRepeatOnce, PiRepeat } from "react-icons/pi";
+import { PiRepeat, PiRepeatOnce } from "react-icons/pi";
 import { BsRewindFill, BsFillFastForwardFill } from "react-icons/bs";
 import { RxShuffle } from "react-icons/rx";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
@@ -49,19 +49,16 @@ const MediaControls = ({
         onClick={handleNext}
       />
       {/* repeat - updated section */}
-      {repeatMode === 'one' ? (
-        <div className="relative">
-          <PiRepeat
-            className="cursor-pointer text-white hover:text-gray-400"
-            size={30}
-            onClick={toggleRepeat}
-          />
-          <span className="absolute text-white text-xs font-bold -bottom-1 -right-1">1</span>
-        </div>
+      {repeatMode === "one" ? (
+        <PiRepeatOnce
+          className="cursor-pointer text-white hover:text-gray-400"
+          size={30}
+          onClick={toggleRepeat}
+        />
       ) : (
         <PiRepeat
           className={`cursor-pointer hover:text-[#555] ${
-            repeatMode === 'all' ? "text-white" : "text-[#999]"
+            repeatMode === "all" ? "text-white" : "text-[#999]"
           }`}
           size={30}
           onClick={toggleRepeat}
