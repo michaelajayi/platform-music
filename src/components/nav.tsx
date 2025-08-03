@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import headerLogo from "../../public/logo-white.svg";
+import headerLogo from "../../public/header-logo.svg";
 import HamburgerToggle from "./hamburger-toggle";
 import MobileMenu from "./mobile-menu";
 
@@ -14,28 +14,40 @@ const Nav = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
-  
+
   useEffect(() => {
     // only run on client side
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
-    }
-    
+    };
+
     // check initial value
     checkMobile();
-    
+
     // Add event listener
-    window.addEventListener('resize', checkMobile);
-    
+    window.addEventListener("resize", checkMobile);
+
     // clean up side effects
-    return () => window.removeEventListener('resize', checkMobile);
-}, []);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
-    <nav className="fixed top-0 leeft-0 w-full z-20 flex-shrink-0 inset-0 self-start bg-transparent backdrop-blur-[10px]">
+    <nav
+      className="fixed top-0 left-0 w-full z-50 flex-shrink-0 self-start bg-transparent
+          backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)]
+          supports-backdrop-blur:bg-black/10"
+    >
       <div className="flex justify-between items-center px-5 lg:px-20 py-5">
         <Link href="/">
-          <Image src={headerLogo} alt="header logo" priority className="w-full h-full scale-125"/>
+          <Image
+            src={headerLogo}
+            alt="header logo"
+            priority
+            className="w-auto h-auto"
+            style={{
+              transform: "scale(1.25)",
+            }}
+          />
         </Link>
         <div className="hidden md:flex space-x-12">
           {navLinks.map((link, index) => (

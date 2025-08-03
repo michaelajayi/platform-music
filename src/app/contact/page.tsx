@@ -17,17 +17,19 @@ const ContactUs = () => {
     },
   ];
   return (
-    <section className="relative w-full min-h-[90vh]  bg-black py-20 flex justify-center items-center border-b-[.5px] border-[#999]">
+    <section className="relative w-full min-h-screen bg-black py-20 flex justify-center items-center border-b-[.5px] border-[#999]">
       <div className="absolute inset-0 z-0">
         <Image
           src={contactUsMaze}
           alt="Contact Us Maze"
           fill
           objectFit="cover"
+          priority
+          quality={100}
         />
       </div>
-      <div className="relative z-10 flex flex-col space-y-8 lg:space-y-20 px-5 lg:px-20 h-full flex-grow py-[5rem] lg:py-0 justify-center items-center lg:mt-0">
-        <div className="flex flex-col space-y-2 justify-center items-center">
+      <div className="relative z-10 flex flex-col space-y-12 lg:space-y-20 px-5 lg:px-20  h-full flex-grow mt-5 lg:mt-10">
+        <div className="flex flex-col space-y-2 justify-center items-center pt-10 lg:pt-0">
           <h3 className="text-white uppercase font-polysans font-light text-[24px] lg:text-[36px] text-center">
             Contact Us
           </h3>

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen w-full overflow-x-hidden relative">
+      <body className="flex flex-col min-h-screen overflow-x-hidden w-full relative">
         <SmoothScrollProvider>
           {/* Navbar */}
           <div className="relative z-20">

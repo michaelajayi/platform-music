@@ -1,47 +1,14 @@
-import cossyBrown from "../../public/images/artists/artist-slider/cossy-brown.svg";
-import dozyJan from "../../public/images/artists/artist-slider/dozy-jan.svg";
-import naomiBozimo from "../../public/images/artists/artist-slider/naomi-bozimo.svg";
-import billPraise from "../../public/images/artists/artist-slider/bill-praise.svg";
-import OurArtistSliderItem from "./our-artist-slider-item";
 import { Swiper, SwiperSlide } from "swiper/react";
+import OurArtistSliderItem from "./our-artist-slider-item";
 
 // import required modules
 import { FreeMode } from 'swiper/modules';
 
+import { artists } from "@/app/utils/constants";
 import "swiper/css";
 import 'swiper/css/free-mode';
 
 const OurArtistsSlider = () => {
-  const artists = [
-    {
-      fullname: "Chisom Kanu",
-      stagename: "Dozy Jan",
-      image: dozyJan,
-      quote:
-        "Music is the essence of our existence, a melody that resonates within every heart. At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together!",
-    },
-    {
-      fullname: "Folake Olabode",
-      stagename: "Cossy Brown",
-      image: cossyBrown,
-      quote:
-        "Music is the heartbeat of our lives, a rhythm that flows through every soul. we celebrate the enchanting influence of music to inspire innovation and build community. Join us on this melodic journey and let the music guide us!",
-    },
-    {
-      fullname: "Naomi Bozimo",
-      stagename: "Shleek",
-      image: naomiBozimo,
-      quote:
-        "Shleek’s sound is a magnetic mix of Afrobeat, R&B, soul, and alté influences—crafted with introspective lyrics, hypnotic rhythms, and a smooth, unmistakable vocal style that sets him apart.",
-    },
-    {
-      fullname: "Bill Praise",
-      stagename: "Wariso Dappa",
-      image: billPraise,
-      quote:
-        "Shleek’s sound is a magnetic mix of Afrobeat, R&B, soul, and alté influences—crafted with introspective lyrics, hypnotic rhythms, and a smooth, unmistakable vocal style that sets him apart.",
-    },
-  ];
   return (
     <div className="w-full h-full">
       <div className="w-full py-10 lg:px-20 flex flex-col space-y-12">

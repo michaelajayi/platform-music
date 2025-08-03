@@ -1,13 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import blogMaze from "../../../public/images/blog-maze.svg";
 import HeaderBlog from "@/components/header-blog";
 import BlogCarousel from "@/components/blog-carousel";
 import VideoGrid from "@/components/video-grid";
 import arrowRightWhite from "../../../public/icons/arrow-right-white.svg";
+import BlogSliderNavButtons from "@/components/blog-slider-nav-buttons";
 
 const Blog = () => {
   return (
     <section className="relative w-full min-h-screen bg-black py-10 pt-[80px]">
+      <style jsx global>{`
+        .swiper-button-disabled {
+          opacity: 0.35;
+          cursor: not-allowed !important;
+          pointer-events: none;
+        }
+
+        .swiper-button-disabled:hover {
+          opacity: 0.35 !important;
+        }
+      `}</style>
       {/* maze */}
       <div className="absolute inset-0 z-0">
         <Image src={blogMaze} alt="Maze" fill objectFit="cover" />
@@ -20,6 +34,8 @@ const Blog = () => {
         </div>
         <div className="w-full h-full my-20 z-10">
           <BlogCarousel />
+          {/*slider nav buttons*/}
+          <BlogSliderNavButtons />
         </div>
         <div className="w-full h-full px-5 lg:px-20 flex flex-col justify-center items-center space-y-10 mb-10 lg:mb-[8rem] z-10">
           <VideoGrid />
