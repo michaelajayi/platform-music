@@ -17,7 +17,7 @@ const BlogPostSliderItem = ({ post }: IPostSliderProps) => {
           className="w-full h-full object-cover"
         />
         {/* overlay */}
-        <div className="absolute inset-0 bg-black/30 z-0 backdrop-blur-[1px] [-webkit-backdrop-filter:blur(10px)]"></div>
+        <div className="absolute inset-0 bg-black/10 z-0 backdrop-blur-[5px] [-webkit-backdrop-filter:blur(5px)] supports-backdrop-blur:bg-black/10"></div>
       </div>
       <div className="absolute bottom-1 lg:bottom-5 w-full h-full flex space-y-2  px-5 py-5 items-end">
         <Link
