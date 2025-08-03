@@ -11,7 +11,9 @@ import { FaArrowLeft } from "react-icons/fa6";
 import blogMaze from "../../../../public/images/blog-maze.svg";
 
 const BlogPost = async ({ params }: BlogPostPageProps) => {
-  const post = getMusicPostBySlug(params.slug);
+  const { slug } = await params;
+  
+  const post = getMusicPostBySlug(slug);
 
   if (!post) {
     notFound();

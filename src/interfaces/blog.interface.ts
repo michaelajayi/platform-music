@@ -25,7 +25,7 @@ export interface IBlogPost {
 }
 
 export interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
