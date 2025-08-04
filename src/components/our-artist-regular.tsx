@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import dozyJan from "../../public/images/artists/dozy-jan.svg";
-import cossyBrown from "../../public/images/artists/cossy-brown.svg";
-import { useState } from 'react';
+import { ourArtistsRegular } from "@/app/utils/constants";
+import Image from "next/image";
+import { useState } from "react";
 
 const OurArtistRegular = () => {
+  const { dozy_jan_slider, cossy_brown_slider } = ourArtistsRegular;
   const [aboutArtistText, setAboutArtistText] = useState(
     "Music is the essence of our existence, a melody that resonates within every heart. At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together!",
   );
-  
+
   return (
     <div className="w-full min-h-screen relative z-20 flex flex-col">
       {/* Title section - fixed height */}
@@ -28,8 +28,8 @@ const OurArtistRegular = () => {
         </div>
       </div>
 
-      {/* Bottom grid  */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-20 z-10 h-auto items-end">
+      {/* Bottom grid  */} 
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-5 lg:px-20 pb-10 z-10 h-auto items-end">
         {/* left artist */}
         <div
           className="relative flex flex-col space-y-3 group h-full"
@@ -40,9 +40,11 @@ const OurArtistRegular = () => {
           }
         >
           <Image
-            src={dozyJan}
+            src={dozy_jan_slider}
             alt="dozy jan"
-            className="absolute bottom-45 transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
+            height={509}
+            width={366}
+            className="absolute bottom-45 left-28 transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
           />
           <div className="flex items-end space-x-3 h-full mt-auto">
             <p className="font-trash-medium text-white font-medium lg:text-[212.557px] leading-[.5] text-[69.854px] self-end">
@@ -58,24 +60,27 @@ const OurArtistRegular = () => {
         </div>
 
         {/* right artist */}
-        <div className="relative flex flex-col space-y-3 group h-full" onMouseEnter={() =>
-          setAboutArtistText(
-            "At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together! Music is the essence of our existence, a melody that resonates within every heart.",
-          )
-        }>
+        <div
+          className="relative flex flex-col space-y-3 group h-full"
+          onMouseEnter={() =>
+            setAboutArtistText(
+              "At The Sound Haven, we embrace the transformative power of music to ignite creativity and foster connection. Let's embark on this harmonious adventure together! Music is the essence of our existence, a melody that resonates within every heart.",
+            )
+          }
+        >
           <Image
-            src={cossyBrown}
+            src={cossy_brown_slider}
             alt="cossy brown"
-            className="absolute bottom-45 right-20 transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
+            height={509}
+            width={366}
+            className="absolute bottom-45 right-[10rem] transition-all opacity-0 translate-y-full duration-800 group-hover:opacity-100 group-hover:translate-y-0 z-0"
           />
           <div className="flex justify-end items-end space-x-3 h-full mt-auto">
             <p className="font-trash-medium text-white font-medium lg:text-[212.557px] leading-[.5] text-[69.854px]">
               02
             </p>
             <div className="flex flex-col space-y-1 pb-2">
-              <p className="font-medium text-white text-[48px]">
-                Cossy Brown
-              </p>
+              <p className="font-medium text-white text-[48px]">Cossy Brown</p>
               <p className="text-[#C7C7CC] text-[15px] lg:text-[24px] leading-[.1]">
                 Funke Olabode
               </p>
@@ -84,7 +89,7 @@ const OurArtistRegular = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default OurArtistRegular;

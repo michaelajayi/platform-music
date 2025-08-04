@@ -1,35 +1,61 @@
-import { useInView } from "react-intersection-observer";
+import { useRef, useState, useImperativeHandle, forwardRef } from "react";
 import ReactPlayer from "react-player";
 
-const VideoPlayer = ({ videoSrc }: { videoSrc: string }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "200px 0px",
-  });
-
-  return (
-    <div ref={ref} className="w-full h-full">
-      {inView && (
-        <ReactPlayer
-          slot="media"
-          src={videoSrc}
-          controls={false}
-          playing={false}
-          playsInline={true}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-          config={{
-            youtube: {
-              color: "white",
-            },
-          }}
-          className="relative z-10"
-        />
-      )}
-    </div>
-  );
+type VideoPlayerProps = {
+  videoSrc: string;
+  playerConfig?: React.ComponentProps<typeof ReactPlayer>;
 };
+
+export type VideoPlayerRef = {
+  togglePlay: () => void;
+  play: () => void;
+  pause: () => void;
+  isPlaying: boolean;
+};
+
+const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
+  ({ videoSrc, playerConfig }, ref) => {
+    const playerRef = useRef<React.ElementRef<typeof ReactPlayer>>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+      setIsPlaying(!isPlaying);
+    };
+
+    const play = () => {
+      setIsPlaying(true);
+    };
+
+    const pause = () => {
+      setIsPlaying(false);
+    };
+
+    // Expose methods to parent component
+    useImperativeHandle(ref, () => ({
+      togglePlay,
+      play,
+      pause,
+      isPlaying,
+    }));
+
+    return (
+      <ReactPlayer
+        ref={playerRef}
+        src={videoSrc}
+        playing={isPlaying}
+        controls={false}
+        playsInline
+        width="100%"
+        height="100%"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+        {...playerConfig}
+      />
+    );
+  }
+);
+
+VideoPlayer.displayName = "VideoPlayer";
 
 export default VideoPlayer;

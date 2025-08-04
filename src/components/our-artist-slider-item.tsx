@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import Image from 'next/image';
 
 interface IArtist {
   stagename: string;
   fullname: string;
-  image: StaticImageData;
+  image: string;
   quote: string;
 }
 
@@ -24,6 +24,8 @@ const OurArtistSliderItem = ({ artist, index }: OurArtistSliderItemProps) => {
           src={artist.image}
           alt={artist.fullname}
           className="w-full h-full object-cover"
+          height={80}
+          width={100}
         />
       </div>
       <div className="flex flex-col space-y-3 flex-shrink-0 py-5">

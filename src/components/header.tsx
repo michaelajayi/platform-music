@@ -2,14 +2,19 @@ import Image from "next/image";
 import headerScroller from "../../public/images/header-scroller.svg";
 import arrowDownWhite from "../../public/icons/arrow-down-white.svg";
 import BackgroundVideoPlayer from "./background-video-player";
-import { headerMissionPreview, missionStatement } from "@/app/utils/constants";
+import {
+  headerMissionPreview,
+  missionStatement,
+  UPLOADED_MEDIA,
+} from "@/app/utils/constants";
 
 const Header = () => {
+  const { header_background_video_url } = UPLOADED_MEDIA;
   return (
     <header className="fixed top-0 left-0 w-full h-screen overflow-hidden flex flex-col z-10">
       {/* absolute positioned elements */}
       <div className="absolute inset-0 z-10">
-        <BackgroundVideoPlayer videoSrc="/videos/header.mp4" />
+        <BackgroundVideoPlayer videoSrc={header_background_video_url} />
 
         {/* scroller */}
         <div className="absolute right-5 lg:right-10 bottom-5 lg:bottom-10 grid place-content-center bg-tomato-red rounded-full z-20">
